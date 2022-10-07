@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+{% extends 'base.html' %}
+{% load static %}
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>ContactUs</title>
+
+
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{%static "css/bootstrap.css"%}"/>
+  <!-- progress barstle -->
+  <link rel="stylesheet" href="{%static "css/css-circular-prog-bar.css"%}">
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Raleway:400,600&display=swap" rel="stylesheet">
+  <!-- font wesome stylesheet -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <!-- Custom styles for this template -->
+  <link href="{%static "css/style.css"%}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{%static "css/responsive.css"%}" rel="stylesheet" />
+
+
+
+
+  <link rel="stylesheet" href="{%static "css/css-circular-prog-bar.css"%}">
+
+
+</head>
+
+<body class="sub_page">
+  <!-- end header section -->
+  <!-- contact section -->
+{% block header %}
+  <section class="contact_section ">
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="d-flex justify-content-center d-md-block">
+            <h2>
+              Contact Us
+            </h2>
+          </div>
+          <form action="" method="post">
+            <div class="contact_form-container">
+              <div>
+                <div>
+                  <input  placeholder="Name" type={{form.name}}
+                </div>
+                <div>
+                  <input  placeholder="Email" type={{form.email}}
+                </div>
+                <div>
+                  <input  placeholder="Phone Number" type={{form.phone}}
+                </div>
+                <div class="mt-5">
+                  <input  placeholder="Message" type={{form.message}}
+                </div>
+                <div class="mt-5">
+                  <button type="submit">
+                    send
+                  </button>
+                </div>
+              </div>
+              {% csrf_token %}
+
+            </div>
+
+          </form>
+        </div>
+        <div class="col-md-6">
+          <div class="contact_img-box">
+            <img src="{%static "images/students.jpg"%}" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endblock %}
+  <!-- end contact section -->
+ {% block footer %}
+{% endblock %}
+</body>
+
+</html>
